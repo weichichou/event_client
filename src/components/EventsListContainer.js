@@ -3,6 +3,7 @@ import internet from 'superagent'
 import {connect} from 'react-redux'
 import EventsList from './EventsList'
 import {eventsFetched} from '../actions/events'
+import CreateEventForm from './CreateEventForm'
 
 class EventsListContainer extends React.Component {
   state = { value: ''}
@@ -20,7 +21,10 @@ class EventsListContainer extends React.Component {
     if(!this.props.events){
       return <p>Loading...</p>
     }else{
-      return <EventsList events={this.props.events} />
+      return <div>
+        <CreateEventForm />
+        <EventsList events={this.props.events} />
+      </div> 
     }
   }
 }

@@ -6,3 +6,12 @@ export function eventsFetched(events){
     payload: events
   }
 }
+
+export const EVENT_CREATED = 'EVENT_CREATED'
+
+export function eventCreated(event){
+  return {
+    type: EVENT_CREATED,
+    payload: event
+  } 
+}
